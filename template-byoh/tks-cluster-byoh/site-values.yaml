@@ -1,0 +1,17 @@
+apiVersion: openinfradev.github.com/v1
+kind: HelmValuesTransformer
+metadata:
+  name: site
+
+global:
+  # These values are replaced on cluster creation by workflow
+  clusterName: cluster.local
+charts:
+- name: cluster-api-byoh
+  override:
+    cluster.name: $(clusterName)
+    machineDeployment:
+    - name: tks
+      replicas: 3
+    - name: normal
+      replicas: 1
