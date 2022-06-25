@@ -12,6 +12,20 @@ charts:
     cluster.name: $(clusterName)
     machineDeployment:
     - name: tks
-      replicas: 3
+      replicas: 1
+      selector:
+        matchLabels:
+          role: tks
+      labels:
+        servicemesh: enabled
+        taco-egress-gateway: enabled
+        taco-ingress-gateway: enabled
+        taco-lma: enabled
     - name: normal
       replicas: 1
+      autoscaling:
+        minSize: 1
+        maxSize: 5
+      selector:
+        matchLabels:
+          role: worker

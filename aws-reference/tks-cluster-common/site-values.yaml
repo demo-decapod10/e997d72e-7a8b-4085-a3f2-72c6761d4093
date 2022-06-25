@@ -21,6 +21,8 @@ charts:
           cpu: 2000m
           memory: 4Gi
       service:
+        annotations:
+          service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
         externalTrafficPolicy: Local
         annotations:
           service.beta.kubernetes.io/aws-load-balancer-name: "taco-ingress-nlb"
