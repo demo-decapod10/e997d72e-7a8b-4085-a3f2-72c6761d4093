@@ -15,7 +15,7 @@ charts:
         host: 10.0.102.38
         port: 6441
     machineDeployment:
-    - name: tks
+    - name: taco
       replicas: 3
       selector:
         matchLabels:
