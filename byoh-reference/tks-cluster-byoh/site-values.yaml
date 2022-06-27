@@ -16,7 +16,7 @@ charts:
         port: 6441
     machineDeployment:
     - name: tks
-      replicas: 1
+      replicas: 3
       selector:
         matchLabels:
           role: tks
