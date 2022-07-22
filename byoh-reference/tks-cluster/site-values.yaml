@@ -10,9 +10,13 @@ charts:
 - name: cluster-api-byoh
   override:
     cluster.name: $(clusterName)
+    byoCluster:
+      controlPlaneEndpoint:
+        host: 10.0.102.38
+        port: 6441
     machineDeployment:
     - name: taco
-      replicas: 1
+      replicas: 3
       selector:
         matchLabels:
           role: tks
