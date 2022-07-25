@@ -26,7 +26,7 @@ charts:
         taco-ingress-gateway: enabled
         taco-lma: enabled
     - name: normal
-      replicas: 1
+      replicas: 2
       autoscaling:
         minSize: 1
         maxSize: 5
